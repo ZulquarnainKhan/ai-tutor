@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { getTutorPrompt } from '../utils/prompts.js';
 
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyBESA5SPpmy6aRYkSZy7DDhc08R_07d9wM";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY 
 
 if (!apiKey) {
   console.error('❌ VITE_GEMINI_API_KEY is not set!');
