@@ -6,9 +6,18 @@ import { Button } from "./components/ui/Button";
 import { Input } from "./components/ui/Input";
 import { useChat } from "./hooks/useChat";
 import { useStudentLevel } from "./hooks/useStudentLevel";
+import { useLocation } from "react-router-dom";
+import { trackPageView } from "./analytics";
 
 function App() {
   const [input, setInput] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
+
 
   // 👉 Sidebar open by default on desktop, closed on mobile
   const [isSidebarOpen, setIsSidebarOpen] = useState(
